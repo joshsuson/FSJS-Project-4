@@ -71,12 +71,51 @@
              overlay.style.display = 'flex';
              h1.textContent = 'Congratulations! You Win!';
              button.textContent = "Want to play again?"
+             button.id = 'finished'
          } else if (this.missed === 5) {
              overlay.classList.remove('start');
              overlay.classList.add('lose');
              overlay.style.display = 'flex';
              h1.textContent = "Oh no, you didn't guess right.";
              button.textContent = 'Try another phrase?';
+             button.id = 'finished'
          }
+     }
+
+     resetGame() {
+        const phraseUL = document.querySelector('#phrase ul');
+        const lettersLI = phraseUL.querySelectorAll('li');
+        const chosenLetters = document.querySelectorAll('.chosen');
+        const wrongLetters = document.querySelectorAll('.wrong');
+        const hearts = document.querySelectorAll('img');
+        const overlay = document.querySelector('#overlay');
+        
+        this.missed = 0;
+
+        [...lettersLI].forEach(LI => {
+            LI.remove();
+        });
+
+        [...chosenLetters].forEach(letter => {
+            letter.classList.remove('chosen');
+            letter.removeAttribute('disabled');
+        });
+        [...wrongLetters].forEach(letter => {
+            letter.classList.remove('wrong');
+            letter.removeAttribute('disabled');
+        });
+        [...hearts].forEach(heart => {
+            heart.src = 'images/liveHeart.png';
+        });
+
+        if(overlay.classList == "lose") {
+            overlay.classList.remove('lose');
+        } else if (overlay.classList == 'win') {
+            overlay.classList.remove('win');
+        }
+
+        overlay.style.display = 'none';
+        this.startGame();
+         
      }
  }
