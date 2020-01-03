@@ -8,7 +8,7 @@
   --color-lose: #D94545;
   --color-start: #5b85b7;
   --color-neutral: #445069;
-  --color-neutral-light: #D2D2D2;
+  --color-neutral-light: #212121;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
   --font-size-large: 60px;
@@ -28,6 +28,7 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background-color: #292a2b;
 }
 
 li, ol, ul {
@@ -60,7 +61,7 @@ button {
   cursor: pointer;
 }
 
-#btn__reset {
+#btn__reset, #finished {
 	width: 200px;
 	margin: 0 auto;
 }
@@ -86,7 +87,7 @@ button {
 /* Title */
 
 .header {
-  color: #3a3f58;
+  color: #8bc2db;
 }
 
 
@@ -101,6 +102,7 @@ button {
   color: transparent;
   background: var(--color-neutral-light);
   border-radius: 5px;
+  border: solid 1px rgba(250, 250, 250, .25);
 }
 
 .space {
@@ -111,7 +113,7 @@ button {
 
 .show {
   color: #fff;
-  background-color: #4ac0d5;
+  background-color: #739e5d;
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -130,15 +132,21 @@ button {
   justify-content: center;
 }
 
+.key {
+  background-color: #212121;
+  color: #c8c8c8;
+  border: solid 1px rgba(250, 250, 250, .25);
+}
+
 .chosen {
-  background: #3a3f58;
+  background: #739e5d;
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #f7a964;
+  background: #886658;
   color: #FFFFFF;
 }
 
@@ -180,7 +188,7 @@ button {
 }
 
 .start {
-  background-color: #3a3f58;
+  background-color: #4e95c1;
 }
 
 .start a {
@@ -188,17 +196,17 @@ button {
 }
 
 .win {
-  background-color: var(--color-win);
+  background-color: #739e5d;
 }
 
 .win a {
-  color: var(--color-win);
+  color: #739e5d;
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: #886658;
 }
 
 .lose a {
-  color: var(--color-lose);
+  color: #886658;
 }

@@ -14,6 +14,15 @@
      }
  });
 
+ document.addEventListener('keyup', (e) => {
+     const keys = document.querySelectorAll('.key');
+     [...keys].forEach(key => {
+         if (key.textContent === e.key) {
+             game.handleInteraction(key);
+         }
+     });
+ });
+
  document.querySelector('#overlay').addEventListener('click', (e) => {
      if (e.target.id === 'finished') {
          game.resetGame();
